@@ -1,7 +1,16 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: myvotingnamespace
+  labels:
+    name: myvotingnamespace
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-back
+  namespace: myvotingnamespace
 spec:
   replicas: 1
   selector:
@@ -28,6 +37,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: azure-vote-back
+  namespace: myvotingnamespace
 spec:
   ports:
   - port: 6379
@@ -38,6 +48,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-front
+  namespace: myvotingnamespace
 spec:
   replicas: 1
   selector:
@@ -73,6 +84,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: azure-vote-front
+  namespace: myvotingnamespace
 spec:
   type: LoadBalancer
   ports:
