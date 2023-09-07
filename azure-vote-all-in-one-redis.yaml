@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: myvotingnamespace
  labels:
-   name: myvotingnamespace
+  name: myvotingnamespace
 
 ---
 apiVersion: apps/v1
