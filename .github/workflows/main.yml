@@ -5,7 +5,7 @@ on:
       - "azure-vote/**"
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout source code 
         uses: actions/checkout@v3
